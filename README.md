@@ -9,6 +9,7 @@ Edit [commands](https://github.com/riconem/set-conf-via-ssh/blob/master/commands
 
 Example: Cisco commands
 ```
+terminal length 0
 sh run
 conf t
 do sh ip int brief
@@ -22,7 +23,8 @@ ls -a
 ## ssh settings
 Configure your ssh settings in [set-conf-via-ssh](https://github.com/riconem/set-conf-via-ssh/blob/master/set-conf-via-ssh)
 
-## execute
+## create logs directory and execute
 ```
+mkdir logs
 ./set-conf-via-ssh
 ```
