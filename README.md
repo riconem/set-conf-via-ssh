@@ -24,5 +24,5 @@ Configure your ssh settings in [set-conf-via-ssh](https://github.com/riconem/set
 
 ## execute
 ```
-.\set-conf-via-ssh
+./set-conf-via-ssh
 ```
