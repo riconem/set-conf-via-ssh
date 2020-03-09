@@ -23,8 +23,7 @@ ls -a
 ## ssh settings
 Configure your ssh settings in [set-conf-via-ssh](https://github.com/riconem/set-conf-via-ssh/blob/master/set-conf-via-ssh)
 
-## create logs directory and execute
+## execute
 ```
-mkdir logs
 ./set-conf-via-ssh
 ```
