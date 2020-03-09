@@ -1,4 +1,2 @@
-sh run
+terminal length 0
 conf t
-do sh ip int brief
-end

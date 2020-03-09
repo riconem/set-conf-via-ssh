@@ -1,14 +1,19 @@
 #!/bin/bash
 
 addresses=$(cat address-list)
-commands="$(cat commands)"
+commands=$(cat commands)
+
+printf "password:"
+read -s password
+echo ""
 
 for address in $addresses
 do
 	logfile=logs/$address.log
-	echo "---------Trying to connect to $address---------"
-	# change ssh options
-	ssh -c aes256-cbc -o ConnectTimeout=5 -l root $address << EOF
+	echo "Trying to connect to $address..."
+	# change ssh options here
+	sshpass -p $password  ssh -T -c aes256-cbc -o ConnectTimeout=5 $address>$logfile <<EOF
  $commands
 EOF
+echo "Configured $address -> Log under $logfile"
 done
