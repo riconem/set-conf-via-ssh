@@ -1,0 +1,4 @@
+sh run
+conf t
+do sh ip int brief
+end

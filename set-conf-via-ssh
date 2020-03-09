@@ -1,0 +1,14 @@
+#!/bin/bash
+
+addresses=$(cat address-list)
+commands="$(cat commands)"
+
+for address in $addresses
+do
+	logfile=logs/$address.log
+	echo "---------Trying to connect to $address---------"
+	# change ssh options
+	ssh -c aes256-cbc -o ConnectTimeout=5 -l root $address << EOF
+ $commands
+EOF
+done
