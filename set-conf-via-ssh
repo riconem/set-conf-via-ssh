@@ -12,7 +12,7 @@ do
 	logfile=logs/$address.log
 	echo "Trying to connect to $address..."
 	# change ssh options here
-	sshpass -p $password  ssh -T -c aes256-cbc -o ConnectTimeout=5 $address>$logfile <<EOF
+	sshpass -p $password  ssh -T -c aes256-cbc -o ConnectTimeout=5 -l root $address>$logfile <<EOF
  $commands
 EOF
 echo "Configured $address -> Log under $logfile"
